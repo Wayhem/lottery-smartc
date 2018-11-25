@@ -18,6 +18,7 @@ class App extends Component {
     const players = await lottery.methods.getPlayers().call();
     const balance = await web3.eth.getBalance(lottery.options.address);
     this.setState({ manager, players, balance });
+    window.ethereum.enable();
   }
 
   onSubmit = async event => {
